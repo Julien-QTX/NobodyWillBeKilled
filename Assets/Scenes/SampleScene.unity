@@ -227,9 +227,9 @@ GameObject:
   - component: {fileID: 521998617}
   - component: {fileID: 521998616}
   - component: {fileID: 521998620}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: User
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -375,7 +375,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02bc8e3e83b2d4769b798237c998dc60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+  jump: 200
+  Move: 0
   rb: {fileID: 521998616}
+  isJumping: 0
 --- !u!1 &1445266467
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +393,7 @@ GameObject:
   - component: {fileID: 1445266468}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
