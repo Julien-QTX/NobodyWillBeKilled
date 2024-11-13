@@ -6,14 +6,16 @@ TagManager:
   tags:
   - User
   - Floor
+  - OpenDoor
+  - PreviousDoor
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - User
   - Water
   - UI
-  - Player
+  - 
   - 
   - 
   - 
