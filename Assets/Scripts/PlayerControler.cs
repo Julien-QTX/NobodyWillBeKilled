@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControler : MonoBehaviour
+public class UserScript : MonoBehaviour
 {
-
+    public float speed, jump, Move;
     public Rigidbody2D rb;
-
-
+    public bool isJumping;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,25 +16,28 @@ public class PlayerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit2D raycast = Physics2D.Raycast(transform.position,-Vector2.up);
+        Move = Input.GetAxis("Horizontal");
 
-        if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)){
-            rb.velocity = new Vector2(5, rb.velocity.y);
+        rb.velocity = new Vector2(speed * Move, rb.velocity.y);
+        if(Input.GetButtonDown("Jump") && isJumping == false){
+            rb.AddForce(new Vector2(rb.velocity.x, jump));
         }
-        if(Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.LeftArrow)){
-            rb.velocity = new Vector2(-5, rb.velocity.y);
-        }
-             if(Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Space)){
-            rb.velocity = new Vector2(rb.velocity.x, 5),
-            raycast;
-        }
-        
-
-        // if(Input.GetKey(KeyCode.Right)){
-        //     lb.velocity = new Vector2(1, lb.velocity.y);
-        // }
-        // if(Input.GetKey(KeyCode.Q)){
-        //     lb.velocity = new Vector2(1, lb.velocity.y);
-        // }
+            
     }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.CompareTag("Floor"))
+        {
+            isJumping = false;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Floor"))
+        {
+            isJumping = true;
+        }
+    }
+
 }
