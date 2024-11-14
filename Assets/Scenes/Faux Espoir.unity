@@ -2633,7 +2633,6 @@ MonoBehaviour:
   speed: 8
   jump: 350
   Move: 0
-  sprint: 0
   rb: {fileID: 521998616}
   isJumping: 0
   touchOpenNextDoor: 0
