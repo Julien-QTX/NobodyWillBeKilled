@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class UserScript : MonoBehaviour
 {
-    public float speed, jump, Move;
+    public float speed = 8f, jump = 350, Move, sprint;
     public Rigidbody2D rb;
     public bool isJumping, touchOpenNextDoor, touchPreviousDoor;
 
@@ -23,9 +23,11 @@ public class UserScript : MonoBehaviour
         Move = Input.GetAxis("Horizontal");
 
         rb.velocity = new Vector2(speed * Move, rb.velocity.y);
+
         if(Input.GetButtonDown("Jump") && isJumping == false){
             rb.AddForce(new Vector2(rb.velocity.x, jump));
         }
+<<<<<<< HEAD
         if(touchOpenNextDoor == true)
         {
             SceneController.instance.NextLevel();
@@ -37,6 +39,23 @@ public class UserScript : MonoBehaviour
 
         }
 
+=======
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            speed = speed * 2;
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            speed = speed / 2;
+        }
+
+        // if (Input.GetKey(KeyCode.LeftShift)){
+        //     speed = speed * 1.5f;
+        // }
+            
+>>>>>>> 14c1f7e (sprint OK)
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
