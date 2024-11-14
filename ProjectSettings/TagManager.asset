@@ -11,6 +11,9 @@ TagManager:
   - keys
   - CloosedDoor
   - OpenDoor
+  - keys
+  - CloosedDoor
+  - OpenDoor
   layers:
   - Default
   - TransparentFX

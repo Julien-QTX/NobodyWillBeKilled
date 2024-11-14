@@ -68,6 +68,10 @@ public class UserScript : MonoBehaviour
         {
             touchPreviousDoor = true;
         }
+        if (other.gameObject.CompareTag("CloosedDoor"))
+        {
+            Debug.Log("test");
+        }
     }
 
     private void OnCollisionExit2D(Collision2D other)
