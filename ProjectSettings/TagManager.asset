@@ -10,7 +10,8 @@ TagManager:
   - PreviousDoor
   - keys
   - CloosedDoor
-  - OpenDoor
+  - keys
+  - CloosedDoor
   layers:
   - Default
   - TransparentFX
