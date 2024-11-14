@@ -27,7 +27,6 @@ public class UserScript : MonoBehaviour
         if(Input.GetButtonDown("Jump") && isJumping == false){
             rb.AddForce(new Vector2(rb.velocity.x, jump));
         }
-<<<<<<< HEAD
         if(touchOpenNextDoor == true)
         {
             SceneController.instance.NextLevel();
@@ -39,7 +38,6 @@ public class UserScript : MonoBehaviour
 
         }
 
-=======
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -55,7 +53,6 @@ public class UserScript : MonoBehaviour
         //     speed = speed * 1.5f;
         // }
             
->>>>>>> 14c1f7e (sprint OK)
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
