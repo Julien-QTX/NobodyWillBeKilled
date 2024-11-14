@@ -6,6 +6,9 @@ TagManager:
   tags:
   - User
   - Floor
+  - keys
+  - CloosedDoor
+  - OpenDoor
   layers:
   - Default
   - TransparentFX
