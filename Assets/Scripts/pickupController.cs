@@ -20,12 +20,11 @@ public class pickupController : MonoBehaviour
     {
     }
 
-    void OnCollisionEnter2D(UnityEngine.Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("User"))
         {
-            GameObject[] closedDoors = GameObject.FindGameObjectsWithTag("CloosedDoor");
-            Debug.Log(GameObject.FindGameObjectsWithTag("CloosedDoor"));
+            GameObject[] closedDoors = GameObject.FindGameObjectsWithTag("ClosedDoor");
             foreach (GameObject door in closedDoors)
             {
                 door.tag = "OpenDoor";
