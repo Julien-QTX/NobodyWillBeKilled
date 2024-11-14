@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class UserScript : MonoBehaviour
 {
-    public float speed = 8f, jump = 350, Move, sprint;
+    public float speed , jump, Move;
     public Rigidbody2D rb;
     public bool isJumping, touchOpenNextDoor, touchPreviousDoor;
 
@@ -38,7 +38,6 @@ public class UserScript : MonoBehaviour
 
         }
 
-
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             speed = speed * 2;
@@ -49,9 +48,6 @@ public class UserScript : MonoBehaviour
             speed = speed / 2;
         }
 
-        // if (Input.GetKey(KeyCode.LeftShift)){
-        //     speed = speed * 1.5f;
-        // }
             
     }
     private void OnCollisionEnter2D(Collision2D other)
@@ -60,6 +56,10 @@ public class UserScript : MonoBehaviour
         {
             isJumping = false;
         }
+        if (other.gameObject.CompareTag("CloosedDoor"))
+        {
+            Debug.Log("test");
+        }
         if (other.gameObject.CompareTag("OpenDoor"))
         {
             touchOpenNextDoor = true;
@@ -67,6 +67,10 @@ public class UserScript : MonoBehaviour
         if (other.gameObject.CompareTag("PreviousDoor"))
         {
             touchPreviousDoor = true;
+        }
+        if (other.gameObject.CompareTag("CloosedDoor"))
+        {
+            Debug.Log("test");
         }
     }
 

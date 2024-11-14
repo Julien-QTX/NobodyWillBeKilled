@@ -8,6 +8,12 @@ TagManager:
   - Floor
   - OpenDoor
   - PreviousDoor
+  - keys
+  - CloosedDoor
+  - OpenDoor
+  - keys
+  - CloosedDoor
+  - OpenDoor
   layers:
   - Default
   - TransparentFX
