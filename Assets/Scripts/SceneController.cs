@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
     public static SceneController instance;
+    public string sceneName;
+
     public void Awake()
     {
         if(instance == null)
@@ -27,5 +29,10 @@ public class SceneController : MonoBehaviour
     public void PreviousLevel()
     {
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    public void FirstLevel()
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }

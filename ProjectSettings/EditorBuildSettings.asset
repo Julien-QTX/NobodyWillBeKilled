@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: 355b46bb5f31e384c8ab906833274126
+  - enabled: 1
     path: Assets/Scenes/MarioScene.unity
     guid: 516b538924869564b98d4d7765d68fef
   - enabled: 1
@@ -14,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Illusion.unity
     guid: c6aaca2a3cd5b5741986258829d46360
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: 25a22fcf22569634f831a7a630f6331f
   m_configObjects: {}
