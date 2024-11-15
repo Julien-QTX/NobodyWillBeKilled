@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: MarioScene
+  sceneRestart: GameOver
 --- !u!4 &224892444
 Transform:
   m_ObjectHideFlags: 0
