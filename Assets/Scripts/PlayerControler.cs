@@ -56,7 +56,7 @@ public class UserScript : MonoBehaviour
         {
             isJumping = false;
         }
-        if (other.gameObject.CompareTag("CloosedDoor"))
+        if (other.gameObject.CompareTag("ClosedDoor"))
         {
             Debug.Log("test");
         }
@@ -67,10 +67,6 @@ public class UserScript : MonoBehaviour
         if (other.gameObject.CompareTag("PreviousDoor"))
         {
             touchPreviousDoor = true;
-        }
-        if (other.gameObject.CompareTag("CloosedDoor"))
-        {
-            Debug.Log("test");
         }
     }
 
