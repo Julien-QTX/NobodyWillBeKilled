@@ -8,6 +8,7 @@ public class SceneController : MonoBehaviour
 {
     public static SceneController instance;
     public string sceneName;
+    public string sceneRestart;
 
     public void Awake()
     {
@@ -35,4 +36,10 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
-}
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(sceneRestart);
+    }
+
+    }

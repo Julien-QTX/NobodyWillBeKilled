@@ -11,8 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MarioScene.unity
     guid: 516b538924869564b98d4d7765d68fef
-  - enabled: 1
-    path: Assets/Scenes/Faux Espoir.unity
+  - enabled: 0
+    path: Assets/Scenes/A supprimer.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Illusion.unity
@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/End.unity
     guid: 25a22fcf22569634f831a7a630f6331f
+  - enabled: 1
+    path: Assets/Scenes/kill.unity
+    guid: 851f7cfd336c575489ad75350b5db515
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: c09276fbadd03f747ab31a3d8bd488be
   m_configObjects: {}

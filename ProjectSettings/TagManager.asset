@@ -9,6 +9,9 @@ TagManager:
   - OpenDoor
   - PreviousDoor
   - ClosedDoor
+  - keys
+  - CloosedDoor
+  - KillZone
   layers:
   - Default
   - TransparentFX

@@ -7,7 +7,7 @@ public class UserScript : MonoBehaviour
 {
     public float speed , jump, Move;
     public Rigidbody2D rb;
-    public bool isJumping, touchOpenNextDoor, touchPreviousDoor;
+    public bool isJumping, touchOpenNextDoor, touchPreviousDoor, touchKillZone;
 
     private AssetBundle myLoadedAssetBundle;
     private string[] scenePaths;
@@ -35,6 +35,11 @@ public class UserScript : MonoBehaviour
         if (touchPreviousDoor == true)
         {
             SceneController.instance.PreviousLevel();
+
+        }
+        if (touchKillZone == true)
+        {
+            SceneController.instance.RestartLevel();    
 
         }
 
@@ -68,9 +73,9 @@ public class UserScript : MonoBehaviour
         {
             touchPreviousDoor = true;
         }
-        if (other.gameObject.CompareTag("CloosedDoor"))
+        if (other.gameObject.CompareTag("KillZone"))
         {
-            Debug.Log("test");
+            touchKillZone = true;
         }
     }
 
