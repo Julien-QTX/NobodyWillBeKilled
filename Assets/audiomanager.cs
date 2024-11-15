@@ -1,7 +1,10 @@
-
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class audiomanager : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
     [Header("-------AudioManager-------")]
 
@@ -29,4 +32,4 @@ public class audiomanager : MonoBehaviour
 
     }
 
-}
+};

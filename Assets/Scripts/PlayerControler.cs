@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UserScript : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
     public float speed , jump, Move;
     public Rigidbody2D rb;
@@ -45,16 +45,22 @@ public class UserScript : MonoBehaviour
         }
         if(touchOpenNextDoor == true)
         {
+            musicSource.clip= OpenDoor;
+            musicSource.Play();
+
             SceneController.instance.NextLevel();
             
         }
         if (touchPreviousDoor == true)
         {
+            musicSource.clip= OpenDoor;
+            musicSource.Play();
             SceneController.instance.PreviousLevel();
 
         }
         if (touchKillZone == true)
         {
+
             SceneController.instance.RestartLevel();    
 
         }

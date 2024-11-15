@@ -28,6 +28,11 @@ public class pickupController : MonoBehaviour
             foreach (GameObject door in closedDoors)
             {
                 door.tag = "OpenDoor";
+
+                musicSource.clip= OpenDoor;
+                musicSource.clip=Clé ;
+                musicSource.Play(OpenDoor, Clé);
+
             }
 
             Destroy(gameObject);
