@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,25 +8,40 @@ public class UserScript : MonoBehaviour
 {
     public float speed , jump, Move;
     public Rigidbody2D rb;
-    public bool isJumping, touchOpenNextDoor, touchPreviousDoor;
-
+    public bool isGrounded, touchOpenNextDoor, touchPreviousDoor, isFacingRight;
+    public Animator animator;
     private AssetBundle myLoadedAssetBundle;
     private string[] scenePaths;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
-
+    void FilpSprite()
+    {
+        if(isFacingRight && Move < 0f || !isFacingRight && Move > 0f)
+        {
+            isFacingRight = !isFacingRight;
+            Vector3 ls = transform.localScale;
+            ls.x *= -1f;
+            transform.localScale = ls;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
         Move = Input.GetAxis("Horizontal");
 
         rb.velocity = new Vector2(speed * Move, rb.velocity.y);
+        animator.SetFloat("xVelocity", Math.Abs(rb.velocity.x));
+        animator.SetFloat("yVelocity", rb.velocity.y);
 
-        if(Input.GetButtonDown("Jump") && isJumping == false){
-            rb.AddForce(new Vector2(rb.velocity.x, jump));
+        FilpSprite();
+        if (Input.GetButtonDown("Jump") && isGrounded == false)
+        {
+            Debug.Log(isGrounded);
+           rb.AddForce(new Vector2(0, jump));
         }
         if(touchOpenNextDoor == true)
         {
@@ -54,7 +70,8 @@ public class UserScript : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Floor"))
         {
-            isJumping = false;
+            isGrounded = false;
+            animator.SetBool("isJumping", !isGrounded);
         }
         if (other.gameObject.CompareTag("CloosedDoor"))
         {
@@ -78,7 +95,8 @@ public class UserScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Floor"))
         {
-            isJumping = true;
+            isGrounded = true;
+            animator.SetBool("isJumping", !isGrounded);
         }
         if (other.gameObject.CompareTag("OpenDoor"))
         {
@@ -91,5 +109,4 @@ public class UserScript : MonoBehaviour
         
 
     }
-   
 }
